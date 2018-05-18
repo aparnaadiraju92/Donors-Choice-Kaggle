@@ -67,3 +67,6 @@ Let's divide our analysis into 5 parts:
      predicting the model_test data
 12. Compare both the model results
 
+# 3. A look into the code
+
+*Reading in train and test dataset
