@@ -71,16 +71,20 @@ Look at the DonorsChoice_Rcode.R file for all the code.
 
 ### *4. WordClouds for Essay 1, Essay 2, Summary, Title
 
-WordCloud for Project_Essay_1:
+*WordCloud for Project_Essay_1:
+
 ![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/Essay1.PNG)
 
-WordCloud for Project_Essay_2:
+*WordCloud for Project_Essay_2:
+
 ![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/Essay2.PNG)
 
-WordCloud for Project_Resource_Summary:
+*WordCloud for Project_Resource_Summary:
+
 ![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/SummaryWC.png)
 
-WordCloud for Project_Title:
+*WordCloud for Project_Title:
+
 ![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/TitleWC.PNG)
 
 
@@ -143,6 +147,6 @@ The variable importance and variable importance plot for XGBoost model
 
 # 4. Kaggle Scores
 
-For the output from GLM model, Kaggle score was around 0.69
-For the output from XGBoost model, Kaggle score was 0.70162
+*For the output from GLM model, Kaggle score was around 0.69
+*For the output from XGBoost model, Kaggle score was 0.70162
 
