@@ -1,3 +1,5 @@
+# DonorChoice - predict project approval
+
 #--------Part-1--------#
 # 1. Installing required packages
 # 2. Loading packages
@@ -470,7 +472,8 @@ indexes <- createDataPartition(model_train$project_is_approved, times = 1, p = 0
 split.train <- model_train[indexes,]
 split.test <- model_train[-indexes,]
 
-
+prop.table(table(split.train$project_is_approved))
+prop.table(table(split.test$project_is_approved))
 
 #--------Part- 5-------#
 # 10. Building a XGBoost model 
@@ -508,11 +511,11 @@ ProjectXGB = train(formula,
 
 prediction_prob = predict(ProjectXGB,split.test,type = 'prob',na.action = na.pass)
 
-
 split.test_solution <- 
-            data.frame('id' = model_test$id, 'actual_project_is_approved' = split.test$project_is_approved,
-           'predicted_project_is_approved' = prediction_prob$X1,
-           'predicted_result' = ifelse(prediction_prob$X1 >= 0.75, "X1", "X0"))
+  data.frame('id' = split.test$id, 'actual_project_is_approved' = split.test$project_is_approved,
+             'predicted_project_is_approved' = prediction_prob$X1,
+             'predicted_result' = ifelse(prediction_prob$X1 >= 0.75, "X1", "X0"))
+
   
 head(split.test_solution)
 
@@ -554,7 +557,7 @@ LogisticModel <- train(formula, data = split.train,
 prediction_prob_GLM = predict(LogisticModel,split.test,type = 'prob',na.action = na.pass)
 
 split.test_GLMsolution <- 
-  data.frame('id' = model_test$id, 'actual_project_is_approved' = split.test$project_is_approved,
+  data.frame('id' = split.test$id, 'actual_project_is_approved' = split.test$project_is_approved,
              'predicted_project_is_approved' = prediction_prob_GLM$X1,
              'predicted_result' = ifelse(prediction_prob_GLM$X1 >= 0.75, "X1", "X0"))
 
