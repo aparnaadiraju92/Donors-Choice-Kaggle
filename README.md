@@ -38,17 +38,17 @@ Let's divide our analysis into 5 parts:
  
 ###### #--------Part-2--------#
 4. Data Exploration 
-4. a) Observe the data
-4. b) Removing unwanted columns from the data
-4. c) Word clouds
+   a) Observe the data
+   b) Removing unwanted columns from the data
+   c) Word clouds
 
 
 ###### #--------Part-3--------#
 5. Feature Engineering - train and test sets
-5. a) Adding text length
-5. b) Extracting month, day
-5. c) Resources related calculations and joining datasets based on project_id
-5. d) Sentiment Analysis
+   a) Adding text length
+   b) Extracting month, day
+   c) Resources related calculations and joining datasets based on project_id
+   d) Sentiment Analysis
 
 ###### #--------Part-4--------#
 6. Creating a new data set model_train, model_test with required columns only.
