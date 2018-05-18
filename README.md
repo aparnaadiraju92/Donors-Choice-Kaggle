@@ -70,4 +70,5 @@ Let's divide our analysis into 5 parts:
 # 3. A look into the code
 
 *Reading in train and test dataset
-![alt text](https://raw.githubusercontent.com/aparnaadiraju92/Donors-Choice-Kaggle/readData.PNG)
+![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/readData.PNG)
+
