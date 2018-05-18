@@ -147,6 +147,7 @@ The variable importance and variable importance plot for XGBoost model
 
 # 4. Kaggle Scores
 
-*For the output from GLM model, Kaggle score was around 0.69
-*For the output from XGBoost model, Kaggle score was 0.70162
+For the output from GLM model, Kaggle score was around 0.69
+
+For the output from XGBoost model, Kaggle score was 0.70162
 
