@@ -11,7 +11,7 @@ This repository helps Data Analytics/Science Enthusiasts to perform feature engi
 
 The concepts and codes used here are inspired from our previous project on Spooky author identification (https://github.com/chandrahas-reddy/spooky-author-kaggle/tree/aparna) 
 
-Data for analysis: https://www.kaggle.com/c/donorschoose-application-screening/data
+Data used for analysis can be downloaded from: https://www.kaggle.com/c/donorschoose-application-screening/data
 
 # 1. Introduction
 ### What is Predictive analysis?
