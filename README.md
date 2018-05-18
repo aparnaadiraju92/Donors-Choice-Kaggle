@@ -38,17 +38,17 @@ Let's divide our analysis into 5 parts:
  
 ###### #--------Part-2--------#
 4. Data Exploration 
-a) Observe the data
-b) Removing unwanted columns from the data
-c) Word clouds
+4. a) Observe the data
+4. b) Removing unwanted columns from the data
+4. c) Word clouds
 
 
 ###### #--------Part-3--------#
 5. Feature Engineering - train and test sets
-a) Adding text length
-b) Extracting month, day
-c) Resources related calculations and joining datasets based on project_id
-d) Sentiment Analysis
+5. a) Adding text length
+5. b) Extracting month, day
+5. c) Resources related calculations and joining datasets based on project_id
+5. d) Sentiment Analysis
 
 ###### #--------Part-4--------#
 6. Creating a new data set model_train, model_test with required columns only.
@@ -63,6 +63,8 @@ d) Sentiment Analysis
 
 # 3. A look into the code
 
+Look at the DonorsChoice_Rcode.R file for all the code.
+
 ### *3. Reading in train and test dataset
 
 ![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/readData.PNG)
@@ -70,19 +72,15 @@ d) Sentiment Analysis
 ### *4. WordClouds for Essay 1, Essay 2, Summary, Title
 
 WordCloud for Project_Essay_1:
-
 ![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/Essay1.PNG)
 
 WordCloud for Project_Essay_2:
-
 ![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/Essay2.PNG)
 
 WordCloud for Project_Resource_Summary:
-
 ![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/SummaryWC.png)
 
 WordCloud for Project_Title:
-
 ![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/TitleWC.PNG)
 
 
@@ -95,9 +93,56 @@ b) Extracting month and day
 c) Calculations from the resources dataset
 d) Sentiment Analysis
 
-### * 9. Stratified split on model_train data 70:30 proportions 
+### *9. Stratified split on model_train data 70:30 proportions 
 
 ![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/Stratified%20split.PNG)
 
-Look at the DonorsChoice_Rcode.R file for all the code.
+### *10. XGBoost
+XGBoost is an optimized distributed gradient boosting library designed to be highly efficient, flexible and portable. It implements machine learning algorithms under the Gradient Boosting framework. XGBoost provides a parallel tree boosting (also known as GBDT, GBM) that solve many data science problems in a fast and accurate way. The same code runs on major distributed environment (Hadoop, SGE, MPI) and can solve problems beyond billions of examples.
+
+https://github.com/dmlc/xgboost
+
+The probabilities cut-off is assumed to be 75%. This means, the project id with predicted probability above 75% is considered approved. 
+The confusion matrix for the XGBoost model is shown below.
+
+![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/ConfusionMatrix_XGBoost.PNG)
+
+The variable importance and variable importance plot for XGBoost model
+
+![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/VarImp_XGBoost.PNG)
+![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/VarImpPlot_XGBoost.png)
+
+### *11. GLM
+The generalized linear model (GLM) is a flexible generalization of ordinary linear regression that allows for response variables that have error distribution models other than a normal distribution. The GLM generalizes linear regression by allowing the linear model to be related to the response variable via a link function and by allowing the magnitude of the variance of each measurement to be a function of its predicted value.
+
+https://github.com/kabacoff/RiA2/blob/master/Ch13%20Generalized%20linear%20models.R
+
+The probabilities cut-off is assumed to be 75%. This means, the project id with predicted probability above 75% is considered approved. 
+The confusion matrix for the GLM model is shown below.
+
+![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/ConfusionMatrix_GLM.PNG)
+
+The plot for the GLM Model resulted
+![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/GLMPlot.png)
+
+The variable importance and variable importance plot for XGBoost model
+
+![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/VarImp_GLM.PNG)
+![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/VarImpPlot_GLM.png)
+
+
+### *12. Model Comparison
+
+*Split_test data comparison - sample screenshot
+
+![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/Comparison_Split.test%20data.PNG)
+
+*Model_test final results comparison - sample screenshot
+
+![alt text](https://github.com/aparnaadiraju92/Donors-Choice-Kaggle/blob/master/Comparison_Model_test%20data.PNG)
+
+# 4. Kaggle Scores
+
+For the output from GLM model, Kaggle score was around 0.69
+For the output from XGBoost model, Kaggle score was 0.70162
 
