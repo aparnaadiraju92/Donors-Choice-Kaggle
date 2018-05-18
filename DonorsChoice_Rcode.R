@@ -1,7 +1,3 @@
-#set working directory
-setwd("C:/Users/aparn/OneDrive/Documents/Learn_Extra/_Kaggle_DonorsChoice")
-getwd()
-
 #--------Part-1--------#
 # 1. Installing required packages
 # 2. Loading packages
